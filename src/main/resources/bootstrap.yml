@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: config-service
+environment: dev
+
+---
+
+spring:
+  profiles: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${HOME}/development/working/configurations
+          searchPaths:
+            - "{application}/${environment}"
+          clone-on-start: false
+          basedir: /tmp/tmp-git/
+          strict-host-key-checking: false
+        prefix: /configs/
+server:
+  port: 8888
+environment: dev
+---
+
+spring:
+  profiles: prod
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${HOME}/development/working/configurations
+          searchPaths:
+            - "{application}/${environment}"
+          clone-on-start: false
+          basedir: /tmp/tmp-git/
+          strict-host-key-checking: false
+        prefix: /configs/
+server:
+  port: 8888
+environment: prod
