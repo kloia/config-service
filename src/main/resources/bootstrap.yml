@@ -2,7 +2,8 @@ spring:
   application:
     name: config-service
 environment: dev
-
+encrypt:
+  key: ENCRYPT
 ---
 
 spring:
@@ -11,7 +12,7 @@ spring:
     config:
       server:
         git:
-          uri: ${HOME}/development/working/configurations
+          uri: ${HOME}/development/configurations
           searchPaths:
             - "{application}/${environment}"
           clone-on-start: false
@@ -29,7 +30,7 @@ spring:
     config:
       server:
         git:
-          uri: ${HOME}/development/working/configurations
+          uri: ${HOME}/development/configurations
           searchPaths:
             - "{application}/${environment}"
           clone-on-start: false
