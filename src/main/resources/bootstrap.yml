@@ -12,7 +12,7 @@ spring:
     config:
       server:
         git:
-          uri: ${HOME}/development/configurations
+          uri: ${HOME}/development/configuration-poc/configurations
           searchPaths:
             - "{application}/${environment}"
           clone-on-start: false
@@ -30,7 +30,7 @@ spring:
     config:
       server:
         git:
-          uri: ${HOME}/development/configurations
+          uri: ${HOME}/development/configuration-poc/configurations
           searchPaths:
             - "{application}/${environment}"
           clone-on-start: false
