@@ -3,7 +3,7 @@
 A microservice-based applications managing configuration settings for each service is difficultly.
 For the above, you can use spring cloud config server using Git repository configuration storage.
 
-### Architect
+### Architecture
 
 ![img.png](img.png)
 
