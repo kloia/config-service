@@ -124,4 +124,25 @@ Config service filters the incoming request(ex. http://localhost:8888/configs/st
                 .toString();
     }
 ```
-Above is the code. 
+
+In the config server, you can also encrypt configs which should be protected. 
+By sending POST request to http://localhost:8888/configs/encrypt. In the body, there have to be the word you want to encrypt as text. You will get the cipher.
+The configuration which provides encryption is in the following.
+ ```
+spring:
+...
+encrypt:
+  key: ENCRYPT
+
+ ```
+
+After getting cipher, you should add cipher to the configuration repo. 
+
+Example:
+
+```
+...
+password: '{cipher}96e8313926293cfc62f015b030273cb88e9e09d2a421edef16df2d151d6787f8'
+```
+
+
